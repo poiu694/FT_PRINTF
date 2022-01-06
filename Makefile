@@ -6,7 +6,7 @@
 #    By: sangmlee <sangmlee@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/06 17:12:19 by sangmlee          #+#    #+#              #
-#    Updated: 2022/01/06 17:23:14 by sangmlee         ###   ########.fr        #
+#    Updated: 2022/01/06 17:28:46 by sangmlee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,9 @@
 NAME		=	libftprintf.a
 
 SRCS		=	ft_printf.c \
-				
+				str_utils.c \
+				transform.c \
+				transform_utils.c \
 
 OBJS		=	$(SRCS:.c=.o)
 
