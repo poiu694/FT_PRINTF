@@ -6,7 +6,7 @@
 #    By: sangmlee <sangmlee@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/06 17:12:19 by sangmlee          #+#    #+#              #
-#    Updated: 2022/01/06 17:28:46 by sangmlee         ###   ########.fr        #
+#    Updated: 2022/01/06 22:25:48 by sangmlee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 
-bonus: $(OBJS)
-	$(AR) $(NAME) $^
+test:
+	$(CC) $(CFLAGS) $(SRCS)	
 
 re: fclean all

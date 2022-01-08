@@ -1,48 +1,109 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   transform_utils.c                                  :+:      :+:    :+:   */
+/*   to_str_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sangmlee <sangmlee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/06 17:28:55 by sangmlee          #+#    #+#             */
-/*   Updated: 2022/01/06 17:31:15 by sangmlee         ###   ########.fr       */
+/*   Created: 2022/01/06 22:08:33 by sangmlee          #+#    #+#             */
+/*   Updated: 2022/01/06 22:27:50 by sangmlee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-#include <stdio.h>
-char	*ft_transform_to_digit(int num)
+int	ft_get_size(int n)
 {
-	printf("num : %d\n", num);
-	return (NULL);
+	int	ret;
+
+	ret = 0;
+	if (n <= 0)
+		ret++;
+	while (n != 0)
+	{
+		ret++;
+		n = n / 10;
+	}
+	return (ret);
 }
 
-char	*ft_transform_to_unsigned_int(unsigned int num)
+char	*ft_itoa(int n)
 {
-	printf("num : %u\n", num);
-	return (NULL);
+	int		sign;
+	int		size;
+	char	*ret;
 
+	if (n == 0)
+		return (ft_strdup("0"));
+	if (n > 0)
+		sign = 1;
+	else
+		sign = -1;
+	size = ft_get_size(n);
+	ret = (char *)malloc(sizeof(char) * (size + 1));
+	if (ret == NULL)
+		return (NULL);
+	ret[size] = '\0';
+	while (--size >= 0)
+	{
+		ret[size] = ((n % 10) * sign) + '0';
+		n = n / 10;
+	}
+	if (sign == -1)
+		ret[0] = '-';
+	return (ret);
 }
 
-char	*ft_transform_to_string(char *str)
+char	*ft_uitoa(unsigned int n)
 {
-	printf("num : %s\n", str);
-	return (NULL);
+	int				size;
+	unsigned int	temp;
+	char			*ret;
 
+	if (n == 0)
+		return (ft_strdup("0"));
+	temp = n;
+	size = 0;
+	while (temp)
+	{
+		temp /= 10;
+		size = size + 1;
+	}
+	ret = (char *)malloc(sizeof(char) * (size + 1));
+	if (ret == NULL)
+		return (NULL);
+	ret[size] = '\0';
+	while (--size >= 0)
+	{
+		ret[size] = (n % 10) + '0';
+		n = n / 10;
+	}
+	return (ret);
 }
 
-char	*ft_transform_to_char(char ch)
+char	*ft_ultoa(unsigned long n)
 {
-	printf("num : %c\n", ch);
-	return (NULL);
+	int				size;
+	unsigned long	temp;
+	char			*ret;
 
-}
-
-char	*ft_transform_to_unsigned_long(unsigned long address)
-{
-	printf("num : %lu\n", address);
-	return (NULL);
-
+	if (n == 0)
+		return (ft_strdup("0"));
+	temp = n;
+	size = 0;
+	while (temp)
+	{
+		temp /= 10;
+		size = size + 1;
+	}
+	ret = (char *)malloc(sizeof(char) * (size + 1));
+	if (ret == NULL)
+		return (NULL);
+	ret[size] = '\0';
+	while (--size >= 0)
+	{
+		ret[size] = (n % 10) + '0';
+		n = n / 10;
+	}
+	return (ret);
 }
