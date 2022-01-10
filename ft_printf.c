@@ -6,7 +6,7 @@
 /*   By: sangmlee <sangmlee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 16:14:51 by sangmlee          #+#    #+#             */
-/*   Updated: 2022/01/10 09:37:35 by sangmlee         ###   ########.fr       */
+/*   Updated: 2022/01/10 09:39:54 by sangmlee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ size_t	ft_process_printf_parse(va_list *ap, char *str)
 
 int	ft_printf(const char *arg, ...)
 {
-	char	*line;
 	ssize_t	read_size;
 	va_list	ap;
 
