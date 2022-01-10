@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   to_str_utils.c                                     :+:      :+:    :+:   */
+/*   transform_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sangmlee <sangmlee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 22:08:33 by sangmlee          #+#    #+#             */
-/*   Updated: 2022/01/06 22:27:50 by sangmlee         ###   ########.fr       */
+/*   Updated: 2022/01/08 23:24:18 by sangmlee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ char	*ft_itoa(int n)
 	int		size;
 	char	*ret;
 
-	if (n == 0)
-		return (ft_strdup("0"));
 	if (n > 0)
 		sign = 1;
 	else
@@ -60,8 +58,6 @@ char	*ft_uitoa(unsigned int n)
 	unsigned int	temp;
 	char			*ret;
 
-	if (n == 0)
-		return (ft_strdup("0"));
 	temp = n;
 	size = 0;
 	while (temp)
@@ -87,8 +83,6 @@ char	*ft_ultoa(unsigned long n)
 	unsigned long	temp;
 	char			*ret;
 
-	if (n == 0)
-		return (ft_strdup("0"));
 	temp = n;
 	size = 0;
 	while (temp)

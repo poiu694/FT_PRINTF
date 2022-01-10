@@ -6,7 +6,7 @@
 /*   By: sangmlee <sangmlee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 17:28:55 by sangmlee          #+#    #+#             */
-/*   Updated: 2022/01/07 23:14:47 by sangmlee         ###   ########.fr       */
+/*   Updated: 2022/01/09 00:42:19 by sangmlee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 char	*ft_transform_to_digit(int num)
 {
 	if (num == 0)
-		return ("0");
+		return (ft_strdup("0"));
 	return (ft_itoa(num));
 }
 
 char	*ft_transform_to_unsigned_int(unsigned int num)
 {
 	if (num == 0)
-		return ("0");
+		return (ft_strdup("0"));
 	return (ft_uitoa(num));
 }
 
@@ -36,14 +36,14 @@ char	*ft_transform_to_char(char ch)
 
 char	*ft_transform_to_str(char *str)
 {
-	if (!str)
-		return ("(null)");
-	return (str);
+	if (str == NULL)
+		return (ft_strdup("(null)"));
+	return (ft_strdup(str));
 }
 
 char	*ft_transform_to_unsigned_long(unsigned long address)
 {
 	if (address == 0)
-		return ("0x0");
+		return (ft_strdup("0x0"));
 	return (ft_ultoa(address));
 }
