@@ -6,7 +6,7 @@
 /*   By: sangmlee <sangmlee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 16:55:51 by sangmlee          #+#    #+#             */
-/*   Updated: 2022/01/10 18:58:46 by sangmlee         ###   ########.fr       */
+/*   Updated: 2022/01/11 09:57:32 by sangmlee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,14 @@
 
 int		ft_printf(const char *arg, ...);
 
-char	*ft_transform_str_with_arg(va_list *ap, char ch);
+char	*ft_transform_str_with_arg(va_list *ap, char ch, ssize_t *zero_cnt);
 char	*ft_transform_to_digit(int num);
 char	*ft_transform_to_unsigned_int(unsigned int num, char op);
-char	*ft_transform_to_char(char ch);
+char	*ft_transform_to_char(char ch, ssize_t *zero_cnt);
 char	*ft_transform_to_str(char *str);
 char	*ft_transform_to_unsigned_long(unsigned long address);
 
+void	ft_init_size(ssize_t *read_size, ssize_t *zero_cnt);
 char	*ft_get_percent_index(char *str);
 ssize_t	ft_process_printf_parse(va_list *ap, char *str);
 

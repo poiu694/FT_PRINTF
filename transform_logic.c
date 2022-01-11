@@ -6,7 +6,7 @@
 /*   By: sangmlee <sangmlee@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 17:28:55 by sangmlee          #+#    #+#             */
-/*   Updated: 2022/01/10 18:57:16 by sangmlee         ###   ########.fr       */
+/*   Updated: 2022/01/11 14:11:08 by sangmlee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,15 @@ char	*ft_transform_to_unsigned_int(unsigned int num, char op)
 	return (ft_strdup(""));
 }
 
-char	*ft_transform_to_char(char ch)
+char	*ft_transform_to_char(char ch, ssize_t *zero_cnt)
 {
 	char	*ret;
 
+	if (!ch)
+	{
+		*zero_cnt = *zero_cnt + 1;
+		write(1, &ch, 1);
+	}
 	ret = (char *)malloc(sizeof(char) + 1);
 	ret[0] = ch;
 	ret[1] = '\0';
